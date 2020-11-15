@@ -4,7 +4,7 @@ import { first } from 'rxjs/operators';
 
 import { AuthenticationService } from '../services/authentication.service';
 import { User } from '../model/user';
-import { Group } from '../model/Group';
+import { Group } from '../model/group';
 import { GroupService } from '../services/group.service';
 
 
