@@ -1,0 +1,26 @@
+<form [formGroup]="expenseForm" (ngSubmit)="onSubmit()">
+  <div class="form-group row m-2">
+    <div class="col-sm-6">
+      <select id="name" formControlName="name" placeholder="Név">
+        <option [ngValue]="null" hidden>Név</option>
+        <option *ngFor="let i of this.users" [value]="i.userName">
+          {{i.userName}}
+        </option>
+      </select>
+    </div>
+    <div class="col-sm-6">
+      <input type="text" id="amount" placeholder="Összeg" autocomplete="off" formControlName="amount">
+    </div>
+  </div>
+  <div class="form-group row m-2">
+    <div class="col-sm-6">
+      <input type="text" id="description" placeholder="Leírás" autocomplete="off" formControlName="description">
+    </div>
+    <div class="col-sm-6">
+      <input type="date" id="date" placeholder="Dátum" formControlName="date">
+    </div>
+  </div>
+  <div class="m-3 mt-1 d-flex justify-content-center">
+    <button type="submit" class="btn btn-primary">Küld</button>
+  </div>
+</form>

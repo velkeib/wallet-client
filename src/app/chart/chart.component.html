@@ -1,0 +1,109 @@
+<div class="container h-100">
+  <div class="row mb-1" style="height: 220px">
+    <div class="col-md-6 mb-2 p-1 h-100">
+      <div class="card p-0 col-md-12 h-100 cardbgcolour border-dark">
+        <div class="card-header text-black headerbgcolour font-weight-bold">
+          Tag hozzáadása csoporthoz
+        </div>
+        <div class="h-100">
+          <app-newmember-form></app-newmember-form>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6 mb-2 p-1 h-100">
+      <div class="card p-0 col-md-12 h-100 cardbgcolour border-dark">
+        <div class="card-header text-black headerbgcolour font-weight-bold">
+          Költség bevitele
+        </div>
+        <div>
+          <app-expense-form></app-expense-form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row mb-1" style="height: 300px">
+    <div class="col-md-7 mb-2 p-1 h-100">
+      <div class="card p-0 col-md-12 h-100 cardbgcolour border-dark">
+        <div class="card-header text-black headerbgcolour font-weight-bold">
+          Aktuális hónap
+        </div>
+        <div class="row h-100">
+          <div class="col-6 mt-2 align-middle">
+            <canvas id="doughnutChart"></canvas>
+          </div>
+          <div class="col-6 h-100">
+            <table class="table table-sm">
+              <thead>
+                <tr>
+                  <th scope="col">Név</th>
+                  <th scope="col">Összeg</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let user of expenses; index as i">
+                  <td>{{user.name}}</td>
+                  <td>{{user.data[5]}} HUF</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-5 mb-2 p-1">
+      <div class="card p-0 col-md-12 h-100 cardbgcolour border-dark">
+        <div class="card-header text-black headerbgcolour font-weight-bold">
+          Utolsó költségek
+        </div>
+        <div class="my-auto">
+          <app-expense-list></app-expense-list>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row pb-4 mb-4" style="height: 400px;">
+    <div class="col-md-8 p-1 h-100">
+      <div class="card col-md-12 px-0 cardbgcolour border-dark h-100">
+        <div class="card-header text-black headerbgcolour font-weight-bold">
+          Elmúlt 6 hónap
+        </div>
+        <div class="m-4 h-100">
+          <canvas id="expenseChart"></canvas>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4 p-1 h-100">
+      <div class="card col-md-12 px-0 h-100 cardbgcolour border-dark">
+        <div class="card-header text-black headerbgcolour font-weight-bold">
+          Elmúlt 6 hónap összeg
+        </div>
+        <table class="table table-sm">
+          <thead>
+            <tr>
+              <th scope="col">Név</th>
+              <th scope="col">Összeg</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let expenses of doughnutChartExpenses; index as i">
+              <td>{{expenses.name}}</td>
+              <td>{{expenses.data}} HUF</td>
+            </tr>
+          </tbody>
+        </table>
+        <div style="width: 100%; position: absolute; bottom: 0">
+          <hr class="m-0 mt-2">
+          <table class="table table-sm">
+            <tbody>
+              <tr>
+                <td><b>Összesen</b></td>
+                <td><b>{{sum}} HUF</b></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

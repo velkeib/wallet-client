@@ -1,0 +1,16 @@
+.my-auto {
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.cardbgcolour {
+    background-image: linear-gradient(to bottom right, #FFFFFF , #FFFFFF);
+}
+
+.headerbgcolour {
+    background-color: #E7E7E7;
+}
+
+h5, p {
+    color: black;
+}

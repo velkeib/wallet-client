@@ -1,0 +1,18 @@
+<table class="table table-sm">
+    <thead>
+      <tr>
+        <th scope="col">Leírás</th>
+        <th scope="col">Összeg</th>
+        <th scope="col">Név</th>
+        <th scope="col">Dátum</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let expense of expenses; index as i">
+        <td>{{expense.lastName}} {{expense.firstName}}</td>
+        <td>{{expense.amount}} HUF</td>
+        <td>{{expense.description}}</td>
+        <td>{{expense.dateOfCreation | date:'yyyy.MM.dd'}}</td>
+      </tr>
+    </tbody>
+  </table>

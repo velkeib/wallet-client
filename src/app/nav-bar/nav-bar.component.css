@@ -1,0 +1,43 @@
+.sidenav {
+    height: 100%;
+    width: 16%;
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Stay on top */
+    top: 0; /* Stay at the top */
+    left: 0;
+    background-color: #DCDCDC; 
+    overflow-x: hidden; /* Disable horizontal scroll */
+    padding-top: 20px; /* Place content 60px from the top */
+  }
+
+  .paddingbottom{
+    padding-bottom: 2px !important;
+  }
+
+  .grouppadding{
+    padding-left: 32px !important;
+    padding-top: 2px !important;
+    padding-bottom: 2px !important;
+  }
+
+  .sidenav a {
+    padding: 8px 8px 8px 24px;
+    text-decoration: none;
+    font-size: 16px;
+    color: black;
+    display: block;
+  }
+  
+  .sidenav a:hover {
+    color: #3C3C3C;
+  }
+
+  input, select {
+    height: 40px;
+    width: 100%;
+    border: 0;
+    outline: 0;
+    background: transparent;
+    border-bottom: 2px solid black;
+    color: black;
+  }
