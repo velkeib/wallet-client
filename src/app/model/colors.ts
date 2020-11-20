@@ -1,8 +1,8 @@
 export class Colors{
 
     CSS_COLOR_NAMES = [
-        "Orange",
-        "SlateBlue",
+        "#ff6e40",
+        "#1e3d59",
         "MediumSeaGreen",
         "DodgerBlue",
         "Violet",

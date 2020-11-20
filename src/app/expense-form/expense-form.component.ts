@@ -36,7 +36,7 @@ export class ExpenseFormComponent implements OnInit {
     });
 
 
-    this.homeService.getUsers().subscribe(
+    this.homeService.getUsers(this.router.url.split("/")[2]).subscribe(
       data => {
         this.users = data;
       }

@@ -8,6 +8,11 @@ input, select {
     color: black;
   }
 
+  .button-color {
+    background-color: #ff6e40 ;
+    color: #1e3d59;
+    font-weight: bold;
+  }
 
   ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
     color: black;

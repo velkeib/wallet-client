@@ -1,4 +1,5 @@
 <div id="mySidenav" class="sidenav">
+  <a class="nav-item nav-link" href="home">Főoldal</a>
   <a class="nav-item nav-link" (click)="logout()" *ngIf="user">Logout</a>
   <a class="paddingbottom" *ngIf="user">Csoportok</a>
   <div *ngIf="user">
@@ -7,5 +8,7 @@
   <div class="row grouppadding" *ngIf="user">
     <input class="col-12" [(ngModel)]="groupName" placeholder="Új csapat neve">
   </div>
-  <button class="btn btn-primary d-flex justify-content-center" type="button" (click)="createGroup()">Létrehozás</button>
+  <div class="row d-flex justify-content-center pt-2">
+    <button class="btn button-color" type="button" (click)="createGroup()">Létrehozás</button>
+  </div>
 </div>

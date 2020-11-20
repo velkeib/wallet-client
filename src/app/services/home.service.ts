@@ -13,8 +13,8 @@ export class HomeService {
     return this.httpclient.get("http://localhost:8080" + groupId);
   }
 
-  getUsers(): Observable<any> {
-    return this.httpclient.get("http://localhost:8080/users");
+  getUsers(groupId: string): Observable<any> {
+    return this.httpclient.get("http://localhost:8080/users/" + groupId);
   }
 
   setExpenses(post: string, groupId: String): Observable<any> {

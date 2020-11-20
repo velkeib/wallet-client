@@ -5,7 +5,7 @@
     z-index: 1; /* Stay on top */
     top: 0; /* Stay at the top */
     left: 0;
-    background-color: #DCDCDC; 
+    background-color: #1e3d59; 
     overflow-x: hidden; /* Disable horizontal scroll */
     padding-top: 20px; /* Place content 60px from the top */
   }
@@ -20,11 +20,18 @@
     padding-bottom: 2px !important;
   }
 
+  .button-color {
+    background-color: #f5f1e1  ;
+    color: #ff6e40;
+    font-weight: bold;
+  }
+
   .sidenav a {
     padding: 8px 8px 8px 24px;
     text-decoration: none;
+    font-weight: bold;
     font-size: 16px;
-    color: black;
+    color: #f5f1e1;
     display: block;
   }
   
@@ -38,6 +45,6 @@
     border: 0;
     outline: 0;
     background: transparent;
-    border-bottom: 2px solid black;
-    color: black;
+    border-bottom: 2px solid  #f5f1e1;
+    color: #f5f1e1;
   }
