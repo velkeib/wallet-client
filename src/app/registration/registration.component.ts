@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { FormGroup, FormBuilder, FormControl, Validators } from '@angular/forms';
 import { AuthenticationService } from '../services/authentication.service';
 import { first } from 'rxjs/operators';
 import { Router, ActivatedRoute } from '@angular/router';
+import { User } from '../model/user';
 
 @Component({
   selector: 'app-registration',
@@ -13,20 +14,51 @@ export class RegistrationComponent implements OnInit {
 
   constructor(private formBuilder: FormBuilder, private authenticationService: AuthenticationService, private router: Router,) { }
 
-  registrationForm: FormGroup;
+  registrationUser = new User();
+  
+  registrationForm = new FormGroup({
+    email: new FormControl(''),
+    password: new FormControl(''),
+    firstName: new FormControl(''),
+    lastName: new FormControl(''),
+  });
+
   error = '';
   loading = false;
 
+
+
   ngOnInit(): void {
 
-    this.registrationForm = this.formBuilder.group({
-      email: ['', Validators.required],
-      password: ['', Validators.required],
-      firstName: ['', Validators.required],
-      lastName: ['', Validators.required],
+    this.registrationForm =  new FormGroup({
+      email:  new FormControl(this.registrationUser.userName, [
+        Validators.required,
+        Validators.minLength(4)
+      ]),
+      password: new FormControl(this.registrationUser.password, [
+        Validators.required,
+        Validators.minLength(5)
+      ]),
+      firstName: new FormControl(this.registrationUser.firstName, [
+        Validators.required,
+        Validators.minLength(2)
+      ]),
+      lastName: new FormControl(this.registrationUser.lastName, [
+        Validators.required,
+        Validators.minLength(2)
+      ]),
     });
 
   }
+
+  get email() { return this.registrationForm.get('email'); }
+
+  get password() { return this.registrationForm.get('password'); }
+  
+  get firstName() { return this.registrationForm.get('firstName'); }
+
+  get lastName() { return this.registrationForm.get('lastName'); }
+
 
   get f() { return this.registrationForm.controls; }
 

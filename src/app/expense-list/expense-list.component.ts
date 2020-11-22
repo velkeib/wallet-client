@@ -21,7 +21,7 @@ export class ExpenseListComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this.homeService.getLastExpenses(1,1).pipe(first()).subscribe(
+    this.homeService.getLastExpenses(this.router.url.split('/')[2], 1).pipe(first()).subscribe(
       data => {
 
         //console.log(this.datePipe.transform(data.content[0].dateOfCreation, 'yyyy-MM-dd'));

@@ -21,7 +21,7 @@ export class HomeService {
     return this.httpclient.post("http://localhost:8080" + groupId, post);
   }
 
-  getLastExpenses(groupId: number, page: number): Observable<any>{
+  getLastExpenses(groupId: string, page: number): Observable<any>{
     return this.httpclient.get("http://localhost:8080/expenses/" + groupId + "?page=" + page);
   }
 }
