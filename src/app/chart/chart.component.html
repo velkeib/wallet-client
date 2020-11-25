@@ -22,7 +22,7 @@
     </div>
   </div>
 
-  <div class="row mb-1" style="height: 300px">
+  <div class="row mb-1" style="height: 330px">
     <div class="col-md-7 mb-2 p-1 h-100">
       <div class="card p-0 col-md-12 h-100 cardbgcolour bordercolour">
         <div class="card-header text-black headerbgcolour bordercolour font-weight-bold">
@@ -57,7 +57,7 @@
           Utolsó költségek
         </div>
         <div class="my-auto">
-          <app-expense-list></app-expense-list>
+          <app-expense-list (loading)="loadingExpenseList($event)" [expenses]="expenseList" *ngIf="!expenseListLoading"></app-expense-list>
         </div>
       </div>
     </div>

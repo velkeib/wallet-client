@@ -4,6 +4,7 @@ import { HomeService } from '../services/home.service';
 import { User } from '../model/user';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { ChartComponent } from '../chart/chart.component';
+import { first } from 'rxjs/operators';
 
 @Component({
   selector: 'app-expense-form',
@@ -55,7 +56,13 @@ export class ExpenseFormComponent implements OnInit {
             this.chartComponent.expenses = data;
             this.chartComponent.updateChart();
           }
-        )
+        );
+
+        this.homeService.getLastExpenses(this.router.url.split('/')[2], 1).pipe(first()).subscribe(
+          data => {
+            this.chartComponent.expenseList = data.content;
+          }
+        );
 
       }
     );

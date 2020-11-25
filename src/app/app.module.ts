@@ -38,7 +38,7 @@ import { ExpenseListComponent } from './expense-list/expense-list.component';
     CommonModule
   ],
   providers: [{ provide: HTTP_INTERCEPTORS, useClass: BasicAuthInterceptor, multi: true },
-    HomeService],
+    HomeService, ExpenseListComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

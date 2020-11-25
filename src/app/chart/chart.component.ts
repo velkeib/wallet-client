@@ -25,7 +25,8 @@ export class ChartComponent implements OnInit {
   expenses: Expense[];
   monthNames = ["Január", "Február", "Március", "Április", "Május", "Június", "Július", "Augusztus", "Szeptember", "Október", "November", "December"];
   loading = false;
-
+  expenseListLoading = false;
+  expenseList;
 
   ngOnInit() {
     this.loading = true;
@@ -38,6 +39,10 @@ export class ChartComponent implements OnInit {
       }
     );
 
+  }
+
+  loadingExpenseList(event: boolean){
+    this.expenseListLoading = event;
   }
 
   loadChart() {
